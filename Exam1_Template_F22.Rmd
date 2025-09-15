@@ -1,6 +1,6 @@
 ---
 title: "Exam 1 Template"
-author: "YOUR NAME HERE"
+author: "Brenda Luis"
 date: "DATA 2401 - Fall 2022"
 output:
   html_document: default
@@ -36,11 +36,17 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Part 2 (10 points)
 
-In your own words, *briefly* describe the difference between saving, committing, and pushing. 
+In your own words, *briefly* describe the difference between saving, committing, and pushing.
+
+Saving - Storing changes made to files in our local device. 
+
+Committing - is like creating checkpoints of our work. A snapshot of our work at a given time. These changes are only local. 
+
+Pushing - Uploading our commits to github so they are no longer local changes only. 
 
 ## Part 3 (10 points)
 
-* [2 points] Create a vector named `numbers` that contains the odd numbers from 3 to 15. 
+* [2 points] Create a vector named `numbers` that contains the odd numbers from 3 to 15.
 
 * [3 points] Create a second vector called `half_numbers` that contains the elements of `numbers` divided by 2
 
@@ -49,6 +55,23 @@ In your own words, *briefly* describe the difference between saving, committing,
 * [3 points] Try to divide the new vector by two. Does it work? Why or why not? 
 
 ```{r}
+# method 1
+numbers = c(3:15)
+numbers
+
+# method 2
+numbers = seq(3,15)
+numbers
+
+half_numbers = numbers/2
+half_numbers
+
+numbers = c(numbers, "puppies")
+numbers
+
+# numbers / 2
+# dividing the new numbers vector by two will not work because it contains strings 
+# vectors must have same data type so by adding "puppies" all other elements were converted to strings 
 
 ```
 
@@ -69,6 +92,49 @@ weight <- c(14, 89, 32, 46, 55, 7, 25, 36)
 * [2 points] It's been 2 years since you entered this information! Change `age` to reflect that. 
 * [3 points] A new dog is here! Her name is Daisy, she is 3 years old, and weighs 39 pounds. Add her to your data. 
 
+```{r}
+# finding average method 1
+average_age <- sum(age)/length(age)
+average_age
+
+# finding average method 2
+average_age2 <- mean(age)
+average_age2
+
+# finding average method 1
+average_weight <- sum(weight)/length(weight)
+average_weight
+
+# finding average method 2
+average_weight <- mean(weight)
+average_weight
+
+# returns index
+which.max(age)
+
+# returns value 
+max(age)
+
+# oldest dog
+old_dog <- names[which.max(age)]
+old_dog
+
+# heaviest dog
+big_dog <- names[which.max(weight)]
+big_dog
+
+age
+age <- age + 2
+age
+
+names <- c(names, "Daisy")
+age <- c(age, 3)
+weight <- c(weight, 39)
+
+names
+age
+weight
+```
 
 ## Part 5 (10 points)
 
@@ -77,6 +143,13 @@ In baseball, the slugging percentage is computed with 5 variables, the number of
 1. [7 points] Write a function that takes these 5 values as arguments and returns the slugging percentage for that player. 
 
 $$  \frac{(1B + 2B\times2 + 3B \times 3 + HR\times 4)}{AB} $$
+
+```{r}
+slugging_percentage <- function(singles, doubles, tripples, hr, ab){
+  
+  
+}
+```
 
 2. [3 points] The Astros player Jose Altuve currently has the following stats: 
 
