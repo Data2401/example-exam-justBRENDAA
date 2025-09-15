@@ -146,9 +146,13 @@ $$  \frac{(1B + 2B\times2 + 3B \times 3 + HR\times 4)}{AB} $$
 
 ```{r}
 slugging_percentage <- function(singles, doubles, tripples, hr, ab){
+  numerator <- (singles + (doubles * 2) + (tripples * 3) + (hr * 4))
+  denominator <- ab
   
+  return (numerator/denominator)
   
 }
+
 ```
 
 2. [3 points] The Astros player Jose Altuve currently has the following stats: 
@@ -157,12 +161,20 @@ slugging_percentage <- function(singles, doubles, tripples, hr, ab){
 
 Use your function to find his slugging percentage. 
 
-
+```{r}
+slugging_percentage(89, 34, 0, 25, 499)
+```
 ## Part 6 (15 points)
 
 1. [6 points] Write a function that takes a vector `x` and returns a vector with the square root of each element of the vector. 
 
 > For example, if you pass the function a vector containing 4 and 16, it should return a vector containing 2 and 4. 
+
+```{r}
+sqrt <- function(vec){
+  
+}
+```
 
 2. [6 points] Write a second function that does the above, but also removes any negative values or changes them to 0.
 
