@@ -172,19 +172,39 @@ slugging_percentage(89, 34, 0, 25, 499)
 
 ```{r}
 sqrt <- function(vec){
-  
+  root <- vec^(1/2)
+  round(root, 2)
 }
+
+x = c(4, 16)
+x
+
+sqrt(x)
 ```
 
 2. [6 points] Write a second function that does the above, but also removes any negative values or changes them to 0.
 
 > For example, if you pass *this* function -4 and 16, it should return either 0 and 4 or just 4.
 
+```{r}
+sqrt_v2 <- function(x){
+  root <- x^(1/2)
+  root <- replace(root, is.nan(root), 0)
+  round(root, 2)
+}
+
+y = c(-4, 16)
+sqrt_v2(y)
+```
+
 3. [3 points] Test your second function on the following vectors:
 
 ```{r}
 test1 <- c(1:10)
 test2 <- c(-4:4)
+
+sqrt_v2(test1)
+sqrt_v2(test2)
 ```
 
 
@@ -200,6 +220,34 @@ Rating | Bonus Percent
 
 1. [8 points] Write a function that takes the employees score and their salary as arguments and returns their bonus amount for the year. 
 
+```{r}
+bonus <- function(score, salary){
+  if (score == 1){
+    return(.05*salary)
+  } else if(score == 2){
+    return (.10 * salary)
+  } else{
+    return (.15 * salary)
+  }
+}
+```
+
 2. [2 points] Fitz makes $100,000 a year, but only got a score of 1. Use your function to calculate his bonus.
+```{r}
+bonus(1, 100000)
+```
 
 3. [3 extra credit points] Modify your function so that it returns the full pay for the year, salary and bonus combined. How much will Fitz make in total?
+```{r}
+bonus_v2 <- function(score, salary){
+  if (score == 1){
+    return(1.05*salary)
+  } else if(score == 2){
+    return (1.10 * salary)
+  } else{
+    return (1.15 * salary)
+  }
+}
+
+bonus_v2(1, 100000)
+```
